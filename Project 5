@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+    FILE *fp;
+    char name[300];
+
+    clrscr();
+
+    // 1. Writing data into file
+    fp = fopen("feedback.txt", "w");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        getch();
+        return;
+    }
+
+    fprintf(fp, "The service was very good and useful.");
+
+    fclose(fp);
+
+    printf("Data written successfully\n");
+
+
+    // 2. Appending data into file
+    fp = fopen("feedback.txt", "a");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        getch();
+        return;
+    }
+
+    fprintf(fp, "\nI am satisfied with the overall experience.");
+
+    fclose(fp);
+
+    printf("Data appended successfully\n");
+
+
+    // 3. Reading data from file
+    fp = fopen("feedback.txt", "r");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        getch();
+        return;
+    }
+
+    printf("\nFile Contents:\n");
+
+    while (fgets(name, sizeof(name), fp) != NULL)
+    {
+        printf("%s", name);
+    }
+
+    fclose(fp);
+
+    getch();
+}

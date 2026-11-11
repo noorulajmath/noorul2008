@@ -39,4 +39,20 @@ int main() {
         scanf("%s", s1[i].father_name);
         
         printf("Enter mother name: ");
-        scan
+        scanf("%s", s1[i].mother_name);
+    }
+    
+    for(int i = 0; i < 10; i++) {
+        printf("\nDetails for Student %d\n", i + 1);
+        printf("ID: %d\n", s1[i].id);
+        printf("Name:%s\n", s1[i].name);
+        printf("Age:%d\n", s1[i].age);
+        printf("City:%s\n", s1[i].city);
+        printf("Cutoff:%d\n", s1[i].cutoff);
+        printf("DOB:%s\n", s1[i].dob);
+        printf("Father Name:%s\n", s1[i].father_name);
+        printf("Mother Name:%s\n", s1[i].mother_name);
+    }
+    
+    return 0;
+}
